@@ -1,6 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:qr_student_system/core/firebase/firebase_options.dart';
+import 'package:qr_student_system/core/theme/theme.dart';
+import 'package:qr_student_system/presentation/auth/screens/auth.screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,6 +16,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(title: 'QR Attendance System');
+    return MaterialApp(
+      title: 'QR Attendance System',
+      home: const AuthScreen(),
+      theme: AppTheme.lightTheme,
+      debugShowCheckedModeBanner: false,
+    );
   }
 }
