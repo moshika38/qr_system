@@ -17,7 +17,7 @@ class _AuthScreenState extends State<AuthScreen> {
 
   bool show = true;
   bool isAdmin = true;
-
+  bool terms = true;
 
   @override
   Widget build(BuildContext context) {
@@ -173,9 +173,18 @@ class _AuthScreenState extends State<AuthScreen> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                Checkbox(value: false, onChanged: (value) {}),
+                                Checkbox(
+                                  fillColor: MaterialStateProperty.all(AppColors.primaryColor),
+                                
+                                  value: terms,
+                                  onChanged: (value) {
+                                    setState(() {
+                                      terms = !terms;
+                                    });
+                                  },
+                                ),
                                 Text(
-                                  'Keep me sing in on this device',
+                                  'Agree with T&C',
                                   style: Theme.of(context).textTheme.bodySmall!
                                       .copyWith(
                                         fontWeight: FontWeight.w500,
@@ -232,27 +241,39 @@ class _AuthScreenState extends State<AuthScreen> {
                             SizedBox(height: 40),
 
                             Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 50),
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 50,
+                              ),
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
                                     "Privacy Policy",
-                                    style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .bodySmall!
+                                        .copyWith(
                                           fontWeight: FontWeight.w500,
                                           fontSize: 11,
                                         ),
                                   ),
                                   Text(
                                     "Terms of Service",
-                                    style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .bodySmall!
+                                        .copyWith(
                                           fontWeight: FontWeight.w500,
                                           fontSize: 11,
                                         ),
                                   ),
                                   Text(
                                     "Help Center",
-                                    style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .bodySmall!
+                                        .copyWith(
                                           fontWeight: FontWeight.w500,
                                           fontSize: 11,
                                         ),

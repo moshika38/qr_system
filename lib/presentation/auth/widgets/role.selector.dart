@@ -43,7 +43,7 @@ class RoleSelector extends StatelessWidget {
           ),
           child: Center(
             child: Text(
-              "Student",
+              role,
               style: Theme.of(context).textTheme.bodySmall!.copyWith(
                 color: isSelected ? Colors.white : Colors.black,
               ),
